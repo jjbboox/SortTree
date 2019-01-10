@@ -34,36 +34,14 @@ int main(int argc, char **argv)
 		inputNum = atoi(argv[1]);
 	}
 	
-	// If the command line parameter is not specified, or specified parameter value of 0
-	//if(inputNum == 0) {
-		//cout << "The number of values specified on the command line is 0." << endl;
-	//}
-	
-	//while(inputNum <= 0) {
-		//cout<< "Please enter the number of values to be sorted (greater than 0):";
-		//cin >> inputNum;
-	//}
-	
 	SortLeaf* root = NULL;
 	
-	//for(int i = 0;i < inputNum; i++) {
-		//cout<<"Please enter the number " << (i + 1) << "Values:";
-		//cin>>fnum;
-		//if(root == NULL) {
-			//root = new SortLeaf(fnum);
-		//}
-		//else {
-			//root->append(fnum);
-		//}
-	//}
-	//cout<<"End of input"<<endl;
-
 	cout << "Start generating " << inputNum << " random numbers" << endl;
 	iData = new int[inputNum];
 
 	for(int i  = 0; i < inputNum; i++ ) {
 		iData[i] = rand()%iData_MAX;
-		cout << iData[i] << ((i+1)%10==0?'\n':'\t');
+		//cout << iData[i] << ((i+1)%10==0?'\n':'\t');
 	}
 	cout << endl << "Random number generation completed" << endl;
 
@@ -96,9 +74,6 @@ int main(int argc, char **argv)
 		cout << endl << "The sort tree object was deleted successfully." << endl;
 	}
 
-	// cout << "Press any key...";
-	// char a;
-	// a = getchar();
 	return 1;
 }
 
