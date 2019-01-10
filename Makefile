@@ -2,5 +2,5 @@ Target := SortTree
 LIBS := -lstdc++
 SRCS := main.cpp 
 SortTree: $(SRCS)
-	gcc -o $(Target) $(SRCS) $(LIBS)
+	gcc -o ./output/$(Target) $(SRCS) $(LIBS)
 
