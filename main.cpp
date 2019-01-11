@@ -67,6 +67,7 @@ int main(int argc, char **argv)
 	// cout << endl << "Output sort result" << endl;
 	// 从小到大输出
 	// printTree(root, '\t');
+	// 从大到小输出
 	// printTreeReverse(root, '\t');
 	// cout << endl;
 	
