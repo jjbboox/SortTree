@@ -63,6 +63,7 @@ int main(int argc, char **argv)
 	long long end_ms = getSystemTime();
 	time_t end_time = time(NULL);
 
+<<<<<<< HEAD
 	// 以下代码为树状排序结果的输出，在无需输出的情况下可以注释掉
 	// cout << endl << "Output sort result" << endl;
 	// 从小到大输出
@@ -70,6 +71,10 @@ int main(int argc, char **argv)
 	// 从大到小输出
 	// printTreeReverse(root, '\t');
 	// cout << endl;
+=======
+	cout << endl << "Output sort result" << endl;
+	printTree(root, '\t');
+>>>>>>> bb30cc519d6aa0404027a1c477020550a7d575c5
 	
 	cout << "Sorted timestamps:" << end_time << endl;
 	cout << "Sort time:" << (end_ms - start_ms) / 1000.0 << "s" << endl;
