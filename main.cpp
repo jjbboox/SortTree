@@ -10,12 +10,13 @@
 using namespace std;
 #define defInputNum	3
 
-#define iData_CNT		10000000
+#define iData_CNT		10000
 #define iData_MAX		10000000
 
 int *iData;
 
 void printTree(SortLeaf *leaf, char end_c);
+void printTreeReverse(SortLeaf *leaf, char end_c);
 
 long long getSystemTime()
 {
@@ -27,7 +28,6 @@ long long getSystemTime()
 int main(int argc, char **argv)
 {
 	int inputNum = iData_CNT;
-	// float fnum;
 	
 	// Convert parameter 1 to input number if there is a command line argument
 	if(argc > 1){
@@ -63,15 +63,19 @@ int main(int argc, char **argv)
 	long long end_ms = getSystemTime();
 	time_t end_time = time(NULL);
 
+	// 以下代码为树状排序结果的输出，在无需输出的情况下可以注释掉
 	// cout << endl << "Output sort result" << endl;
+	// 从小到大输出
 	// printTree(root, '\t');
+	// printTreeReverse(root, '\t');
+	// cout << endl;
 	
 	cout << "Sorted timestamps:" << end_time << endl;
 	cout << "Sort time:" << (end_ms - start_ms) / 1000.0 << "s" << endl;
 	// Delete object, free memory
 	if(root != NULL) {
 		delete root;
-		cout << endl << "The sort tree object was deleted successfully." << endl;
+		cout << "二叉树状链表对象删除成功。" << endl;
 	}
 
 	return 1;
@@ -82,10 +86,23 @@ void printTree(SortLeaf *leaf, char end_c='\n') {
 	if(leaf->getSmallLeaf() != NULL) {
 		printTree(leaf->getSmallLeaf(), end_c);
 	}
-  if(leaf != NULL) {
+	if(leaf != NULL) {
 		cout << leaf->getValue() << end_c;
-  }
+	}
 	if(leaf->getBigLeaf() != NULL) {
 		printTree(leaf->getBigLeaf(), end_c);
+	}
+}
+
+// 从大到小输出排序结果
+void printTreeReverse(SortLeaf *leaf, char end_c='\n') {
+	if(leaf->getBigLeaf() != NULL) {
+		printTreeReverse(leaf->getBigLeaf(), end_c);
+	}
+	if(leaf != NULL) {
+		cout << leaf->getValue() << end_c;
+	}
+	if(leaf->getSmallLeaf() != NULL) {
+		printTreeReverse(leaf->getSmallLeaf(), end_c);
 	}
 }
