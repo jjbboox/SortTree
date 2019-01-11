@@ -63,8 +63,8 @@ int main(int argc, char **argv)
 	long long end_ms = getSystemTime();
 	time_t end_time = time(NULL);
 
-	// cout << endl << "Output sort result" << endl;
-	// printTree(root, '\t');
+	cout << endl << "Output sort result" << endl;
+	printTree(root, '\t');
 	
 	cout << "Sorted timestamps:" << end_time << endl;
 	cout << "Sort time:" << (end_ms - start_ms) / 1000.0 << "s" << endl;
